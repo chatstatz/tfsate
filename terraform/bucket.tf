@@ -11,6 +11,7 @@ resource "google_storage_bucket" "chatstatz_tfstate_bucket" {
   }
 
   labels = {
+    project    = "chatstatz-control"
     repository = "tfstate"
     stage      = "control"
     slice      = "master"
