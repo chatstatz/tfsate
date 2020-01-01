@@ -1,3 +1,6 @@
+data "google_project" "project" {
+}
+
 data "google_kms_key_ring" "chatstatz_control_key_ring" {
   name     = "chatstatz-control-key-ring"
   location = "global"

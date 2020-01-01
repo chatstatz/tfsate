@@ -19,3 +19,8 @@ resource "google_storage_bucket" "chatstatz_tfstate_bucket" {
     managed-by = "terraform"
   }
 }
+
+resource "google_project_iam_member" "grant_google_storage_service_encrypt_decrypt" {
+  role   = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+  member = "serviceAccount:service-${data.google_project.project.number}@gs-project-accounts.iam.gserviceaccount.com"
+}

@@ -12,6 +12,7 @@ This GCS bucket needs to be deployed manually from a local machine.
 Before running the below commands make sure you have added the path to your `credentials.json` file. See `terraform/providers.tf`.
 
 ```bash
+# Change in to the terrform directory
 cd terraform
 
 # Initial Terraform
@@ -21,10 +22,10 @@ terraform init
 terraform validate
 
 # Run Terraform plan to verify changes before applying
-terraform plan
+GOOGLE_CREDENTIALS=/path/to/gcloud/credentials.json terraform plan
 
 # Apply Terraform templates
-terraform apply -auto-approve
+GOOGLE_CREDENTIALS=/path/to/gcloud/credentials.json terraform apply -auto-approve
 ```
 
 ## License
